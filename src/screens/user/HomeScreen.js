@@ -560,6 +560,30 @@ export const HomeScreen = () => {
                     />
 
                         {/* Rest of the Screen with info and logo */}
+                            <View style={styles.gpCon}>
+                                <Text style={styles.gasText}>Gas Price</Text>
+                                <FontAwesome5 name="gas-pump" color="black" size={theme.hp('5%')} style={{marginVertical: 2}} />
+                                <Text style={styles.dateText}>{moment().format('MM/DD/YYYY')}</Text>
+                            </View>
+
+                            <View style={styles.priceContainer}>
+                                <View style={[styles.priceItem, {backgroundColor:'#e28e16'}]}>
+                                    <Text style={styles.paragraph}>REGULAR</Text>
+                                    <Text style={[styles.paragraph2,{color:'#e28e16'}]}>{gasPrice.regular || 0}/gal</Text>
+                                </View>
+                                <View style={[styles.priceItem, {backgroundColor:'#0b234b'}]}>
+                                    <Text style={styles.paragraph}>PLUS</Text>
+                                    <Text style={[styles.paragraph2, {color:'#0b234b'}]}>{gasPrice.plus || 0}/gal</Text>
+                                </View>
+                                <View style={[styles.priceItem, {backgroundColor:'#079e43'}]}>
+                                    <Text style={styles.paragraph}>SUPER</Text>
+                                    <Text style={[styles.paragraph2,{color:'#079e43'}]}>{gasPrice.super || 0}/gal</Text>
+                                </View>
+                                <View  style={[styles.priceItem, {backgroundColor:'#d10019'}]}>
+                                    <Text style={styles.paragraph}>DIESEL</Text>
+                                    <Text style={[styles.paragraph2,{color:'#d10019'}]}>{gasPrice.diesel || 0}/gal</Text>
+                                </View>
+                            </View>
 
                             <View style={styles.mapContainer}>
                                 <Paper onPress={resetMap} style={styles.getCurrentLocation}>
@@ -588,30 +612,7 @@ export const HomeScreen = () => {
                                     </View>
                             </View>
 
-                            <View style={styles.gpCon}>
-                                <Text style={styles.gasText}>Gas Price</Text>
-                                <FontAwesome5 name="gas-pump" color="black" size={theme.hp('5%')} style={{marginVertical: 2}} />
-                                <Text style={styles.dateText}>{moment().format('MM/DD/YYYY')}</Text>
-                            </View>
 
-                            <View style={styles.priceContainer}>
-                                <View style={[styles.priceItem, {backgroundColor:'#e28e16'}]}>
-                                    <Text style={styles.paragraph}>REGULAR</Text>
-                                    <Text style={[styles.paragraph2,{color:'#e28e16'}]}>{gasPrice.regular || 0}/gal</Text>
-                                </View>
-                                <View style={[styles.priceItem, {backgroundColor:'#0b234b'}]}>
-                                    <Text style={styles.paragraph}>PLUS</Text>
-                                    <Text style={[styles.paragraph2, {color:'#0b234b'}]}>{gasPrice.plus || 0}/gal</Text>
-                                </View>
-                                <View style={[styles.priceItem, {backgroundColor:'#079e43'}]}>
-                                    <Text style={styles.paragraph}>SUPER</Text>
-                                    <Text style={[styles.paragraph2,{color:'#079e43'}]}>{gasPrice.super || 0}/gal</Text>
-                                </View>
-                                <View  style={[styles.priceItem, {backgroundColor:'#d10019'}]}>
-                                    <Text style={styles.paragraph}>DIESEL</Text>
-                                    <Text style={[styles.paragraph2,{color:'#d10019'}]}>{gasPrice.diesel || 0}/gal</Text>
-                                </View>
-                            </View>
                     </ScrollView>
                     
                 </View>
@@ -836,6 +837,20 @@ const useStyles = theme => StyleSheet.create({
         flexDirection:'row',
         flexWrap:'wrap',
         paddingBottom: theme.hp('1.5%'),
+    },
+    paragraph: {
+        fontSize: theme.hp('1.6%'),
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color:'white'
+    },
+    paragraph2: {
+        fontSize: theme.hp('1.8%'),
+        fontWeight: 'bold',
+        textAlign: 'center',
+        backgroundColor:'white',
+        paddingHorizontal: theme.wp('1.8%'),
+        paddingVertical: theme.wp('1%'),
     },
 });
 

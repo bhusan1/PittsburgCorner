@@ -17,7 +17,7 @@ export const TabNavigator = () => {
     const routeName = getFocusedRouteNameFromRoute(route);
     return (
         <>
-            <StatusBar style="light" backgroundColor={theme.colors.secondary} />
+            <StatusBar style="light" backgroundColor={theme.colors.main} />
             <Tab.Navigator
                 initialRouteName={'Home'}
                 tabBar={(props)=><TabBar {...props} />}

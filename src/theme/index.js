@@ -25,7 +25,7 @@ const colors = {
     overlayColor: 'rgba(0,0,0,0.5)',
     bgDark: '#e8e8e8',
     black: '#000000',
-    main: '#ff0010',
+    main: '#006ead',
 };
 
 const fontSizes = {
